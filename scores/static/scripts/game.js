@@ -269,7 +269,7 @@ let Profile = React.createClass({
 			return <ProfileForm score={this.props.score} onSubmit={this.handleSubmit} />
 		else
 			return (<ProfileScores score={this.props.score} name={name} email={email} 
-			onFail={this.handleFail} url='http://localhost:8000/scores.json/' />)
+			onFail={this.handleFail} url='/scores/create/' />)
 	}
 })
 
