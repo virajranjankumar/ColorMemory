@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Color Memory</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/anim.css' %}" />
+    <!--
+    <script src="{% static 'scripts/react-with-addons-15.0.1.js' %}"></script>
+    <script src="{% static 'scripts/react-dom-15.0.1.js' %}"></script>
+    <script src="{% static 'scripts/browser.js' %}"></script>
+    <script src="{% static 'scripts/jquery.min.js' %}"></script>
+    <script src="{% static 'scripts/marked.min.js' %}"></script>
+    -->
+    <script src="https://fb.me/react-15.0.1.min.js"></script>
+    <script src="https://fb.me/react-dom-15.0.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.16/browser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+  </head>
+  <body>
+    <div id="content"></div>
+    <script type="text/babel" src="{% static 'scripts/game.js' %}"></script>
+  </body>
+</html>
