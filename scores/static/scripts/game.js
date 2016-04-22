@@ -170,7 +170,7 @@ let Board = React.createClass({
 		}
 		return (
 			<div>
-				<div style={{float:'left', margin: 'auto'}}>
+				<div style={{float:'left', margin: 'auto', width: '50%'}}>
 					{this.props.won ? 
 						<Profile score={this.props.score} name={this.props.name} email={this.props.email} 
 						onProfileAdd={this.props.onProfileAdd} hits={this.props.hits} misses={this.props.misses} />:
@@ -229,7 +229,6 @@ let GridOverlay = React.createClass({
 		overlay: React.PropTypes.string.isRequired,
 	},
 	render() {
-		//const style = {position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -70%)', zIndex: 1}
 		const style = {paddingLeft: '10px', paddingRight: '10px', zIndex: 1}
 		const children = React.Children.toArray(this.props.children)
 		return (
@@ -286,7 +285,7 @@ let ProfileForm = React.createClass({
 	handleEmailChange(e) { this.setState({email: e.target.value}) },	
 	render() {
 		return (
-		<form onSubmit={this.handleSubmit} style={{textAlign: 'center', width: '50%'}}>
+		<form onSubmit={this.handleSubmit} style={{textAlign: 'center'}}>
 			<span>Please enter your name and email to continue. You can also start a new game.</span><hr />
 			<input type="text" placeholder="Your Name" value={this.state.name} onChange={this.handleNameChange}/><br />
 			<input type="email" placeholder="Your Email" value={this.state.email} onChange={this.handleEmailChange}/><br />

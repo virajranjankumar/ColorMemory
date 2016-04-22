@@ -11,8 +11,9 @@ The backend is a Django application and the frontend is made purely of React.js 
 ## Installation
 
 Since this application is hosted as a single DJango application to install it on a machine follow the steps below
+
 - git clone https://github.com/virajranjankumar/ColorMemory.git
-- cd ColorMemroy
+- cd ColorMemory
 - pip install -r requirements.txt
 - python manage.py makemigrations
 - python manage.py migrate
