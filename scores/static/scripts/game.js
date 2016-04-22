@@ -330,7 +330,7 @@ let ProfileScores = React.createClass({
 			<div style={{display: 'block', overflow: 'auto', margin: 'auto', textAlign: 'center', width: '210px'}}>
 				<h4>You are ranked {this.state.rank}</h4>
 				<h5>Top {this.state.scores.length} Scores</h5>
-				<ol>{this.state.scores.map((s, i) => <li key={i}>{s.name + ' scored ' + s.score}</li>)}</ol>
+				<ol>{this.state.scores.map((s, i) => <li key={i}>{s.name}</li>)}</ol>
 			</div>)
 		} else {
 			return <h4>Loading your rank...</h4>
