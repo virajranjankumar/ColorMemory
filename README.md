@@ -1,8 +1,12 @@
 ## Synopsis
 
-This game is called _Colour Memory_ and consists of a game board. The game board consists of a 4x4 grid, all in all 16 slots. All slots consists of cards face-down. The player is to flip two of these upwards each round, trying to find equals. If the two cards are equal, the player receives one point, and the cards are removed from the game board. Otherwise, the player loses one point and the cards are turned face-down again. This continues until all pairs have been found.
+![Game being played](Animation.gif)
 
-After the game is finished, the user may input his/her name and email. User's details and the scores would then be submitted to the DJango backend and the user would get notified with the high scores and his position in score rankings. 
+This game is called _Colour Memory_ and consists of a game board. 
+
+The game board consists of a 4x4 grid, all in all 16 slots. All slots consists of cards face-down. The player flips two of these upwards each round, trying to find equals. If the two cards are equal, the player receives one point, and the cards are removed from the game board. Otherwise, the player loses one point and the cards are turned face-down again. This continues until all pairs have been found.
+
+After the game is finished, the user can input his/her name and email. User's details and the scores would then be submitted to the DJango backend and the user would get notified with the high scores and his position in score rankings. 
 
 ## Code Example
 
@@ -11,13 +15,12 @@ The backend is a Django application and the frontend is made purely of React.js 
 ## Installation
 
 Since this application is hosted as a single DJango application to install it on a machine follow the steps below
-
-- git clone https://github.com/virajranjankumar/ColorMemory.git
-- cd ColorMemory
-- pip install -r requirements.txt
-- python manage.py makemigrations
-- python manage.py migrate
-- python manage.py runserver 0.0.0.0:8000
+- `git clone https://github.com/virajranjankumar/ColorMemory.git`
+- `cd ColorMemory`
+- `pip install -r requirements.txt`
+- `python manage.py makemigrations`
+- `python manage.py migrate`
+- `python manage.py runserver 0.0.0.0:8000`
 
 Go to link http://localhost:8000/scores/ to start interacting with the game
 
