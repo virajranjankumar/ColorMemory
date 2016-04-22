@@ -51,7 +51,6 @@ let Game = React.createClass({
 		const timerInterval = this.getTimer()
 		return initialGameState(timerInterval, this.props.side)
 	},
-	getDefaultProps() { return {side:4} },
 	handleReset() {
 		const timerInterval = this.getTimer()
 		const state = initialGameState(timerInterval, this.props.side)
@@ -221,7 +220,7 @@ let RestartButton = React.createClass({
 		this.props.onClick()
 	},
 	render() {
-		return <button onClick={this.handleClick}>{this.props.children}</button>
+		return <button onClick={this.handleClick} className="button">{this.props.children}</button>
 	}
 })
 
@@ -287,13 +286,13 @@ let ProfileForm = React.createClass({
 	handleEmailChange(e) { this.setState({email: e.target.value}) },	
 	render() {
 		return (
-		<form onSubmit={this.handleSubmit} style={{margin: 'auto', textAlign: 'center', width: '210px'}}>
-			<p>Please enter your name and email to continue</p><br />
+		<form onSubmit={this.handleSubmit} style={{textAlign: 'center', width: '50%'}}>
+			<span>Please enter your name and email to continue. You can also start a new game.</span><hr />
 			<input type="text" placeholder="Your Name" value={this.state.name} onChange={this.handleNameChange}/><br />
 			<input type="email" placeholder="Your Email" value={this.state.email} onChange={this.handleEmailChange}/><br />
 			<input type="hidden" value={this.props.score}/><br />
 			<span>Your score is {this.props.score}</span><br />
-			<input type="submit" />
+			<input type="submit" className="button" />
 		</form>)	
 	}	
 })
@@ -381,7 +380,8 @@ let Grid = React.createClass({
 					data={values} key={row} 
 					choices={choices} 
 					matches={matches} 
-					current={current} />
+					current={current}
+					side={side} />
 			slotRows.push(slotRow)
 		}
 		return (<table><tbody>{slotRows}</tbody></table>)
@@ -390,6 +390,7 @@ let Grid = React.createClass({
 
 let SlotRow = React.createClass({
 	propTypes: {
+		side: React.PropTypes.number.isRequired,
 		data: React.PropTypes.array.isRequired,
 		choices: React.PropTypes.arrayOf(React.PropTypes.bool).isRequired,
 		matches: React.PropTypes.arrayOf(React.PropTypes.bool).isRequired,
@@ -401,16 +402,18 @@ let SlotRow = React.createClass({
 				data={v} key={i}
 				flipped={this.props.choices[i]} 
 				remove={this.props.matches[i]} 
-				select={this.props.current[i]} />)
+				select={this.props.current[i]}
+				side={this.props.side} />)
 		return <tr>{slots}</tr>
 	}
 })
 
 let Slot = React.createClass({
 	propTypes: {
+		side: React.PropTypes.number.isRequired,
+		data: React.PropTypes.number.isRequired,
 		flipped: React.PropTypes.bool.isRequired,
 		select: React.PropTypes.bool.isRequired,
-		data: React.PropTypes.number.isRequired,
 	},
 	render() {
 		let className = 'card ' 
