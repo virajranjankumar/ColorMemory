@@ -1,5 +1,7 @@
 ## Synopsis
 
+Live version of the game is accessible at http://bc91f8b8.ngrok.io/scores/
+
 ![Game being played](Animation.gif)
 
 This game is called _Colour Memory_ and consists of a game board. 
